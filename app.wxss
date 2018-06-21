@@ -1,0 +1,135 @@
+/**app.wxss**/
+@import 'lib/weui.wxss';
+.weui-navbar__slider {
+  background-color: #e12b44
+}
+.weui-navbar__item.weui-bar__item_on {
+  color: #e12b44
+}
+page{
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+view,text,checkbox {
+  box-sizing: border-box;
+  /* width: 100%; */
+}
+.container {
+
+} 
+.flex-wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-wrp .flex-item {
+  flex: 1
+}
+.splitLine {
+  background-color: #f8f8f8;
+  height: 3px;
+}
+/*  重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 35rpx; /* 背景的宽 */
+   height: 35rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: 1px solid #e12b44;
+   background: #e12b44;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 35rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 35rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 35rpx;
+   text-align: center;
+   font-size:25rpx; /* 对勾大小 25rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+/*  重写 radio 样式  */
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+   border-radius: 50%;/* 圆角 */
+   width: 35rpx;
+   height: 35rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: #e12b44;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 35rpx;
+   text-align: center;
+   font-size:25rpx; /* 对勾大小 25rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+.fixed-btm {
+  position: fixed;
+  height: 100rpx;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+/**ziddingyi cell**/
+.cell-grap {
+  margin-bottom: 15rpx;
+}
+
+.cell-grap .cell {
+  background: #fff;
+  padding: 20rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.cell-grap .cell:last-child {
+  border-bottom: none;
+}
+
+.cell-grap .cell-title {
+}
+
+.cell-grap .cell-title text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.cell-grap .cell-content {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cell-grap .cell-content  .cell-mainInfo {
+  min-width: 180rpx;
+}
+
+.cell-grap .cell-content  .cell-viceInfo {
+  color: #999;
+}
+.cell-grap .cell-content  .cell-right-arrow image{
+  width: 13rpx;
+  padding-left: 10rpx;
+  vertical-align: middle;
+   position: relative;top:-2rpx; 
+}
+

@@ -1,0 +1,76 @@
+/* pages/orderList/orderList.wxss */
+.weui-loadmore {
+  padding-top: 200rpx;
+  margin:0 auto;
+}
+.weui-loadmore__tips_in-line {
+  background-color: #f8f8f8;
+}
+.weui-loadmore_line {
+  margin: 100rpx auto;
+  padding: 0;
+}
+page {
+  background-color: #f8f8f8;
+}
+.weui-navbar {
+  background-color: #fff;
+}
+.weui-tab__content {
+  
+}
+
+.orderListContent {
+
+}
+.goodsItem {
+  background-color: #fff;
+  padding: 15rpx; 
+  margin-bottom: 15rpx;
+}
+.goodsInfo {
+  background-color: #fafafa;
+  padding: 10rpx 30rpx;
+}
+.goodsInfo image {
+  flex: 0 0 150rpx;
+  height: 150rpx !important;
+}
+
+.goodsType {justify-content: space-between;padding: 15rpx 28rpx;border-bottom: 1px solid #f1f1f1;font-size: 24rpx;}
+.goodsType .type {color:#999;}
+.goodsType .totalPrice {
+  
+}
+
+.goodsText {
+  padding-left: 20rpx;
+}
+
+.goodsText .count {
+  /* padding-top: 5rpx; */
+  color: #999;
+  font-size: 22rpx;
+
+}
+
+.goodsText .title {
+  display: block;
+  font-size: 26rpx;
+}
+
+.goodsText .text {
+  font-size: 24rpx;
+  height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-top: 5rpx;
+}
+
+.goodsOperation {padding: 15px 15px 10rpx 15rpx;justify-content: flex-end}
+.goodsOperation button{padding: 0 30rpx;border: 1px solid #e9e9e9;border-radius: 20px;font-size: 24rpx;display: block;margin: 0;}
+.goodsOperation .deletedOrder{margin-right: 25rpx;}
+.goodsOperation .OrderDetailed{}

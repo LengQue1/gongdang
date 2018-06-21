@@ -1,0 +1,66 @@
+/**weui fix**/
+.weui-navbar__item.weui-bar__item_on {
+  color:#e12b44;
+}
+.weui-navbar__slider {
+  background-color: #e12b44;
+}
+
+/**index.wxss**/
+swiper {
+  height: 380rpx;
+}
+image {
+  width: 100%;
+}
+
+.swiper-content {
+  width: 100%;
+
+}
+.swiper-item {
+  display: block;
+
+}
+.section-classify {
+  
+}
+.section-classify .flex-wrp{
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-classify .flex-wrp .flex-item{
+  flex: 0 0 25%;
+  padding:30rpx 5rpx;
+  box-sizing:border-box;
+  font-size: 25rpx;
+  color:#666
+}
+.section-classify .flex-wrp .flex-item text{padding-top: 5px;display: block;}
+.section-classify .flex-wrp .flex-item image {
+  width: 50%;
+}
+
+.ProductSection .flex-item:last-child{margin-right: 0!important;}
+
+.weui-tab__content .valuar {padding: 10px;}
+.weui-tab__content .valuar:nth-child(2) {padding: 0 10px;}
+
+/*load*/
+.loadMoreWrp {
+  background-color: #f8f8f8;
+}
+.weui-loadmore {
+  padding: 100rpx 0;
+  margin:0 auto;
+  
+}
+.weui-loadmore__tips_in-line {
+  background-color: #f8f8f8;
+}
+.weui-loadmore_line {
+  margin: 100rpx auto;
+  padding: 0;
+}

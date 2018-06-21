@@ -1,0 +1,39 @@
+<!--pages/personl/personl.wxml-->
+<view class="personlContent">
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"
+      mode="cover"></image>
+    <view>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="shopAddr">欢迎来到XXX蛋糕店！</text>
+    </view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <view bindtap="jumpOrderList"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="../../images/center_order.png" mode="widthFix" style="width: 15px;margin-right: 8px;margin-top:5px;" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>进行中的订单</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+          <view bindtap="jumpAddr"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="../../images/center_address.png" mode="widthFix" style="width: 15px;margin-right: 8px;margin-top:5px;" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>管理地址</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

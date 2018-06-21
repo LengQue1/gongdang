@@ -1,0 +1,90 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class="orderDetailContent">
+  <view class="orderStatusBox">
+    <view class="statusWrp" hidden="{{!(order.status === 0)}}">
+      <text class="strong">【订单进行中】</text>
+      <text class="text">顾客已付款，等待进入店内就餐</text>
+      <image src="../../images/stamp.png" mode="widthFix"></image>
+    </view>
+    <view class="statusWrp" hidden="{{!(order.status === 1)}}">
+      <text class="strong">【订单已完成】</text>
+      <text class="text">此订单已完成</text>
+      <image src="../../images/stamp.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="goodsDetailBox">
+    <view class="cell-grap">
+      <view class="cell cell-title">
+        <text>商品信息</text>
+      </view>
+      <view class="cell cell-content" wx:for="{{order.goodsList}}" wx:key="*this">
+        <view class="goodsImgWrap">
+          <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        </view>
+        <view class="goodsMsg">
+          <view class="top flex-wrp">
+            <text class="title">{{item.title}}</text>
+            <text class="price">￥{{item.price}}</text>
+          </view>
+          <view class="mid flex-wrp">
+            <text class="type">{{item.type}}</text>
+            <text class="count">x{{item.count}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text>运费</text>
+        <text>￥{{order.freight}}</text>
+      </view>
+      <view class="cell cell-content" style="justify-content:flex-end">
+        <text style="font-size:24rpx;">实付：<text style="color:#e12b44;font-size:30rpx;">￥{{order.total}}</text></text>
+      </view>
+    </view>
+    <view class="cell-grap">
+      <view class="cell cell-title">
+        <text>顾客信息</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">座位号</text>
+        <text class="cell-viceInfo">{{order.customer.seatNumber}}</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">来店人数</text>
+        <text class="cell-viceInfo">{{order.customer.peopleNumber}}</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">备注</text>
+        <text class="cell-viceInfo">{{order.customer.remarks}}</text>
+      </view>
+    </view>
+
+    <view class="cell-grap">
+      <view class="cell cell-title">
+        <text>配送信息</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">配送人号码</text>
+        <text class="cell-viceInfo">{{order.distribution.phone}}</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">配送人姓名</text>
+        <text class="cell-viceInfo">{{order.distribution.name}}</text>
+      </view>
+    </view>
+
+    <view class="cell-grap">
+      <view class="cell cell-title">
+        <text>订单信息</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">订单号</text>
+        <text class="cell-viceInfo">{{order.Number}}</text>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">下单时间</text>
+        <text class="cell-viceInfo">{{order.time}}</text>
+      </view>
+    </view>
+
+  </view>
+</view>

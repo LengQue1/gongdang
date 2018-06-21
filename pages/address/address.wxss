@@ -1,0 +1,198 @@
+/* pages/address/address.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.cell-content {
+  width: calc(100% + 295rpx);
+}
+
+.cell-viceInfo {
+  flex: 1;
+  text-align: right;
+  padding-right: 35rpx;
+}
+
+.cell-viceInfo image {
+  width: 35rpx;
+}
+
+.cell-mainInfo {
+  padding-left: 20rpx;
+}
+
+.cell-mainInfo text {
+  display: block;
+}
+
+.cell-mainInfo .name {
+  font-weight: bold;
+  justify-content: flex-start;
+}
+
+.cell-mainInfo .name .default {
+  font-size: 20rpx;
+  color: #e12b44;
+  padding: 0 10rpx;
+  border: 1px solid #e12b44;
+  font-weight: normal;
+  margin-left: 15rpx;
+}
+
+.cell-grap .cell {
+  padding: 0;
+}
+
+.cell-mainInfo .address {
+  font-size: 24rpx;
+}
+
+.cell-mainInfo .phone {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.addAddress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 25rpx;
+}
+
+.addAddress text {
+  font-size: 28rpx;
+}
+
+.addAddress image {
+  width: 35rpx;
+  position: relative;
+  top: 7rpx;
+  margin-right: 10rpx;
+}
+
+.operation {
+  font-size: 26rpx;
+  text-align: center;
+  height: 150rpx;
+  line-height: 150rpx;
+}
+
+.operation .setDefault {
+  background-color: #999;
+  color: #fff;
+  padding: 0 30rpx;
+}
+
+.operation .del {
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #e12b44;
+  padding: 0 30rpx;
+}
+
+/*demo*/
+
+.msg-list {
+}
+
+.msg-item {
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1rpx solid rgb(233, 233, 233);
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.msg {
+  position: absolute;
+  width: 100%;
+  height: 150rpx;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.editImg {
+  flex: 0 0 35rpx;
+  text-align: right;
+  padding-right: 35rpx;
+}
+
+.editImg image {
+  width: 35rpx;
+}
+
+.addressInfo {
+  padding-left: 30rpx;
+  flex: 1;
+}
+
+.addressInfo text {
+  display: block;
+}
+
+.addressInfo .nameBox {
+    font-weight: bold;
+  justify-content: flex-start;
+}
+.addressInfo .user-name {
+}
+
+.addressInfo .default {
+  font-size: 20rpx;
+  color: #e12b44;
+  padding: 0 10rpx;
+  border: 1px solid #e12b44;
+  font-weight: normal;
+  margin-left: 15rpx;
+}
+
+.addressInfo .address {
+  font-size: 24rpx;
+}
+
+.addressInfo .phone {
+   color: #999;
+  font-size: 24rpx;
+}
+
+.msg-menu {
+  position: absolute;
+  width: 100%;
+  height: 150rpx;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background-color: #fff;
+}
+
+.menu-delete {
+  position: absolute;
+  width: 150rpx;
+  height: 148rpx;
+  top: 1rpx;
+  right: 0;
+  background-color: rgb(255, 58, 50);
+  color: #fff;
+  text-align: center;
+  line-height: 150rpx;
+}
+
+.menu-mark {
+  position: absolute;
+  width: 200rpx;
+  height: 148rpx;
+  top: 1rpx;
+  right: 150rpx;
+  background-color: rgb(200, 199, 205);
+  color: #fff;
+  text-align: center;
+  line-height: 150rpx;
+}

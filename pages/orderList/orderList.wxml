@@ -1,0 +1,42 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="orderListContent">
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);height:2px;"></view>
+    </view>
+    <view class="weui-tab__panel" hidden="{{isLoad}}">
+      <view class="weui-tab__content">
+        <view class="goodsItem" wx:for="{{GoodsList}}" wx:key="*this">
+          <view class="goodsInfo flex-wrp">
+            <image src="{{item.imgSrc}}" mode="widthFix"></image>
+            <view class="goodsText">
+              <text class="title">{{item.title}}</text>
+              <text class="text">{{item.text}}</text>
+              <text class="count">共{{item.count}}件商品</text>
+            </view>
+          </view>
+          <view class="goodsType flex-wrp">
+            <text class="type">类型：{{item.type}}</text>
+            <text class="totalPrice">合计：￥{{item.price}}</text>
+          </view>
+          <view class="goodsOperation flex-wrp">
+            <button bindtap="deletedOrder" class="deletedOrder" data-index="{{index}}" size="mini" plain="true">删除订单</button>
+            <button bindtap="OrderDetail" class="OrderDetailed" size="mini" plain="true" data-index="{{index}}">查看详情</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-loadmore" hidden="{{!isLoad}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" hidden="{{isLoad || GoodsList.length }}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+    </view>
+  </view>
+</view>

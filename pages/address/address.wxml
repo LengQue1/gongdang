@@ -1,0 +1,66 @@
+<!--pages/address/address.wxml-->
+<view class="addressContent">
+  <!-- <view class="cell-grap">
+
+    <view class="cell cell-content" wx:for="{{addressList}}" wx:key="*this"  animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+      <view class="cell-mainInfo">
+        <view class="name flex-wrp">
+          <text>{{item.name}}</text>
+          <text wx:if="{{(item.default)}}" class="default">默认</text>
+        </view>
+        <text class="address">{{item.address}}</text>
+        <text class="phone">{{item.phone}}</text>
+      </view>
+      <view class="cell-viceInfo">
+        <image src="../../images/address_edit.png" mode="widthFix"></image>
+      </view>
+      <view class="operation flex-wrp">
+        <view class="setDefault">设置为默认</view>
+        <view class="del">删除</view>
+      </view>
+    </view>
+
+  </view> -->
+
+  <scroll-view style='height:{{height}}px;padding-bottom:120rpx;' scroll-y='{{scrollY}}' class='msg-list' bindscroll='onScroll'>
+    <view wx:for="{{addressList}}" wx:key="id" class='msg-item' animation='{{item.wrapAnimation}}'>
+      <view id='{{item.id}}' class='msg flex-wrp' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+        <view class="addressInfo">
+          <view class="nameBox flex-wrp">
+            <text class='user-name'>{{item.name}}</text>
+            <text wx:if="{{(item.default)}}" class="default">默认</text>
+          </view>
+          <text class='address'>{{item.address}}</text>
+          <text class='phone'>{{item.phone}}</text>
+        </view>
+        <view class="editImg">
+          <navigator url="/pages/addAddress/addAddress?id={{item.id}}">
+            <image src="../../images/address_edit.png" mode="widthFix"></image>
+          </navigator>
+        </view>
+      </view>
+      <view class='msg-menu'>
+        <view id='{{item.id}}' class='menu-delete' bindtap='onDeleteMsgTap' bindlongtap='onDeleteMsgLongtap'>
+          删除
+        </view>
+        <view id='{{item.id}}' class='menu-mark' bindtap='onMarkMsgTap' bindlongtap='onMarkMsgLongtap'>
+          设为默认
+        </view>
+      </view>
+    </view>
+    <view class="emptyAddress" wx:if="{{!(addressList.length)}}">
+      <view class="weui-loadmore weui-loadmore_line">
+        <view style='background-color:#f8f8f8;' class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无任何地址信息</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <navigator url="/pages/addAddress/addAddress">
+    <view class="addAddress" bindtap="addAddress">
+      <image src="../../images/add_address_icon.png" mode="widthFix"></image>
+      <text>添加地址</text>
+    </view>
+  </navigator>
+
+
+</view>

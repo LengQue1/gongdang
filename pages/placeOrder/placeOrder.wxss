@@ -1,0 +1,106 @@
+/* pages/placeOrder/placeOrder.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.orderDetailContent {
+   margin-bottom: 45rpx;
+}
+
+.orderStatusBox {
+ 
+}
+
+.statusWrp {
+  margin: 25rpx;
+  padding: 25rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.statusWrp .strong {
+  display: block;
+  color: #e12b44;
+  font-size: 38rpx;
+}
+
+.statusWrp .text {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.statusWrp image {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 40rpx;
+}
+
+.goodsDetailBox {
+}
+
+
+
+.goodsImgWrap {
+  flex: 0 0 150rpx;
+}
+
+.goodsImgWrap image {
+  width: 100%;
+  height: 150rpx !important;
+}
+
+.goodsMsg {
+  overflow: hidden;
+  padding-left: 10rpx;
+  font-size: 24rpx;
+}
+
+.goodsMsg .top {
+  justify-content: space-between;
+}
+
+.goodsMsg .top .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.goodsMsg .top .price {
+  color: #e12b44;
+}
+
+.goodsMsg .mid {
+  justify-content: space-between;
+  margin-top: 35rpx;
+}
+
+.goodsMsg .mid .type {
+  color: #999;
+  font-size: 22rpx;
+}
+
+.goodsMsg .mid .count {
+}
+
+.cell-viceInfo input{
+  display: inline;
+  width: 45rpx;
+}
+.cell-viceInfo textarea {
+  height: 85rpx;
+}
+
+/*btmTabbar*/
+
+.btmTabbar {height: 100rpx;position: fixed;bottom: 0;left: 0;width: 100%; }
+.btmTabbar .left{background-color: #fff;flex: 1;justify-content: flex-start;height: 100%;padding-left: 30rpx;}
+
+.btmTabbar .left .item{flex-direction: column;margin-right: 50rpx;position: relative;}
+.btmTabbar .left .item .dot {position: absolute;right: 0;top: 0;width:30rpx;height:30rpx;line-height:30rpx;font-size: 19rpx;background-color: #e12b44;color: #fff;border-radius: 50%;text-align: center;}
+.btmTabbar .left .item image{width: 55rpx;}
+.btmTabbar .left .item text{color: #999;font-size: 24rpx;padding-top: 5rpx;}
+.btmTabbar .right{width: 40%;background-color: #e12b44;color: #fff;text-align: center;height: 100rpx;line-height: 100rpx;font-size: 32rpx;}
+
+.btmTabbar .strong {color: #e12b44;}

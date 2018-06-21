@@ -1,0 +1,22 @@
+/* pages/addAddress/addAddress.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.addAddrContent {
+}
+
+.weui-cell_input,.weui-vcode-btn {
+  font-size: 34rpx;
+}
+.weui-cell_select {
+  font-size:34rpx;
+}
+.weui-select_in-select-after {}
+.weui-vcode-btn {
+  color:#e12b44;
+}
+.weui-btn {
+  background-color: #e12b44 !important;
+}

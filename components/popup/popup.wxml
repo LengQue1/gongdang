@@ -1,0 +1,7 @@
+<!--components/popup/popup.wxml-->
+  <view class="popUpWrp" hidden="{{!showPoP}}" >
+    <view class="mask" bindtap="maskTap"></view>
+    <view class="pupupMain" animation="{{animationData}}">
+      <slot></slot>
+    </view>
+  </view>

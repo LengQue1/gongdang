@@ -1,0 +1,201 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="swiper-content">
+    <swiper indicator-dots="{{swiperData.indicatorDots}}" circular="{{swiperData.circular}}" indicator-active-color="#e80c0c" autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}" duration="{{swiperData.duration}}">
+      <block wx:for="{{swiperData.imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" mode="widthFix" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="section-classify">
+    <view class="flex-wrp">
+      <view class="flex-item" wx:for="{{classify}}" wx:key="*this">
+        <navigator url="{{item.link}}">
+          <view class="imgaes-wrp">
+            <image src="{{item.src}}" mode="widthFix"></image>
+          </view>
+          <text>{{item.text}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="splitLine"></view>
+
+  <view class="shopContent" style="color:#999;font-size:24rpx;padding:10px;">
+
+    <view class="flex-wrp shopMsg" style="padding-bottom:10px;">
+      <view class="flex-wrp flex-item">
+        <view class="imgaes-wrp flex-item" style="flex:0 0 15%;">
+          <image src="{{shopInfo.shopPortrait}}" mode="widthFix" style="width:70rpx;"></image>
+        </view>
+        <view class="flex-item">
+          <text style="width:100%;display:block;color:#333;">{{shopInfo.shopName}}</text>
+          <text>{{shopInfo.time}}</text>
+        </view>
+      </view>
+      <view class="flex-wrp flex-item like-item" style="flex: 0 0 12%;">
+        <view class="imgaes-wrp flex-item">
+          <image src="../../images/zan_icon.png" mode="widthFix" style="width:30rpx;"></image>
+        </view>
+        <view class="flex-item">
+          <text style="color:#5ebeff;">{{shopInfo.likeNum}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="shopSketch" style="padding-bottom:10px;">
+      <text style="color:#333;">{{shopInfo.shopTitle}}</text>
+    </view>
+    <view class="shopPos">
+      <image mode="widthFix" src="{{shopInfo.poster}}"></image>
+    </view>
+    <view class="shopRecommend flex-wrp" style="margin-top:10px;">
+      <button open-type='share' plain='true' class="flex-item flex-wrp" style="border: 1px solid #5ebeff;border-radius:20px;box-sizing:border-box;margin-right:10px;font-size:24rpx;text-align:left;height:97rpx;line-height:40rpx;">
+        <view class="imgaes-wrp flex-item" style="flex:0 0 20%;">
+          <image src="../../images/share_icon.png" mode="widthFix" style="width:40rpx;"></image>
+        </view>
+        <view class="flex-item">
+          <text style="width:100%;display:block;color:#333;">推荐本店</text>
+          <text style='color:#999;'>分享小店有优惠哦</text>
+        </view>
+      </button>
+      <view class="flex-item flex-wrp" style="border: 1px solid #ff6f6f;border-radius:20px;box-sizing:border-box;padding:5px 15px;margin-left:10px;">
+        <view class="imgaes-wrp flex-item" style="flex:0 0 20%;">
+          <image src="../../images/boutique_icon.png" mode="widthFix" style="width:40rpx;"></image>
+        </view>
+        <view class="flex-item">
+          <text style="width:100%;display:block;color:#333;">精品文章</text>
+          <text>店主的创意小屋</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="splitLine" style='margin-top:10rpx;'></view>
+
+  <view class="SelectedSection" style="font-size:24rpx;">
+
+    <view class="SelectedTitle" style='text-align:center;padding:15px 0;'>
+      <text style="display:block;font-size:35rpx;">早餐推荐</text>
+      <text style="display:block;font-size:24rpx;color:#999;margin-top:5rpx;">精致生活从早餐开始</text>
+    </view>
+
+    <view class="ProductSection flex-wrp" style="padding:10px;flex-wrap:wrap">
+      <navigator wx:for="{{Breakfast}}" wx:key="*this" url="{{item.link}}" class="flex-item flex-wrp" style="flex:0 0 50%;margin-bottom:10px;">
+        <view class="flex-item flex-wrp" style="border:1px solid #f8f8f8;border-radius:5px;height:450rpx;overflow:hidden;flex-direction: column;align-content: space-between;">
+          <view class="imgaes-wrp flex-item" style="width:100%;">
+            <image src="{{item.imgSrc}}" mode="widthFix"></image>
+          </view>
+          <text class="flex-item" style="display:block;color:#333;width:100%;padding:5px;">{{item.title}}</text>
+          <view class="PriceABuy flex-item  flex-wrp" style='width:100%;padding:0 5px;'>
+            <text class="flex-item" style="color:#e12b44;font-size:30rpx;">￥{{item.price}}</text>
+            <text class="flex-item" style="border:1px solid #e12b44;border-radius:10px;box-sizing:border-box;padding:8rpx 0rpx;text-align:center;color:#e12b44;font-size:22rpx;flex:0 0 45%;">立即抢购</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <navigator url='/pages/goodsList/goodsList'>
+      <text style="height:60rpx;line-height:60rpx;display:block;text-align:center;">查看更多</text>
+    </navigator>
+
+  </view>
+
+  <view class="splitLine" style='margin-top:10rpx;'></view>
+
+  <view class="videoBox" style="font-size:24rpx;">
+    <video style="width:100%;height:300rpx;" id="myVideo" src="{{videoInfo.videoSrc}}" binderror="videoErrorCallback" poster="{{videoInfo.poster}}"></video>
+    <view class="videoText" style="padding:10px;">
+      <text style="display:block;color:#333;">{{videoInfo.videoTitle}}</text>
+      <text style="display:block;color:#999;margin-top:5px;">{{videoInfo.videoMsg}} </text>
+    </view>
+  </view>
+
+  <view class="splitLine" style='margin-top:10rpx;'></view>
+
+  <view class="weui-tab">
+
+    <view class="weui-navbar">
+      <block wx:for="{{tabs1.tabs}}" wx:key="*this">
+        <view style="padding:16rpx 0;" id="{{index}}" class="weui-navbar__item {{tabs1.activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick1">
+          <view class="weui-navbar__title" style="font-size:32rpx;">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{tabs1.sliderLeft}}px; transform: translateX({{tabs1.sliderOffset}}px); -webkit-transform: translateX({{tabs1.sliderOffset}}px);height:2px;"></view>
+    </view>
+
+    <view class="weui-tab__panel" style="padding-top:80rpx;">
+      <view hidden="{{tab1isLoad}}" class="weui-tab__content" style="background:#f8f8f8;">
+        <navigator wx:for="{{tabsContent1.goodsList}}" wx:key="*this" url="{{item.link}}" class="valuar">
+          <view class="ProductSection flex-wrp ">
+            <view class="flex-item flex-wrp" style="border:1px solid #f8f8f8;border-radius:5px;overflow:hidden;flex-direction: column;align-content: space-between;background-color:#fff;">
+              <view class="imgaes-wrp flex-item" style="width:100%;">
+                <image style="max-height:230rpx;" src="{{item.imgSrc}}" mode="widthFix"></image>
+              </view>
+              <text class="flex-item" style="display:block;color:#333;width:100%;padding:5px 10px;font-size:28rpx;">{{item.title}}</text>
+              <view class="PriceABuy flex-item  flex-wrp" style='width:100%;padding:0 10px 10px 10px;'>
+                <text class="flex-item" style="color:#e12b44;font-size:30rpx;">￥{{item.price}}</text>
+                <text class="flex-item" style="border:1px solid #e12b44;border-radius:10px;box-sizing:border-box;padding:8rpx 0rpx;text-align:center;color:#e12b44;font-size:22rpx;flex:0 0 25%;">立即抢购</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <navigator url="{{tabsContent1.moreGoods}}">
+          <text style="height:80rpx;line-height:80rpx;display:block;text-align:center;font-size:28rpx;color:#999">查看更多</text>
+        </navigator>
+      </view>
+      <view class='loadMoreWrp' hidden="{{!tab1isLoad}}">
+        <view class="weui-loadmore">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <block wx:for="{{tabs2.tabs}}" wx:key="*this">
+        <view style="padding:16rpx 0;" id="{{index}}" class="weui-navbar__item {{tabs2.activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick2">
+          <view class="weui-navbar__title" style="font-size:32rpx;">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{tabs2.sliderLeft}}px; transform: translateX({{tabs2.sliderOffset}}px); -webkit-transform: translateX({{tabs2.sliderOffset}}px);height:2px;"></view>
+    </view>
+
+    <view hidden="{{tab2isLoad}}" class="weui-tab__panel" style="padding-top:80rpx;">
+
+      <view class="weui-tab__content">
+        <view class="ProductSection flex-wrp" style="padding:10px;">
+          <navigator class="flex-item flex-wrp" url="{{item.link}}" wx:for="{{tabsContent2.goodsList}}" wx:key="*this" style='margin-right:10px;'>
+            <view class="flex-item flex-wrp" style="border:1px solid #f8f8f8;border-radius:5px;height:450rpx;overflow:hidden;flex-direction: column;align-content: space-between;">
+              <view class="imgaes-wrp flex-item" style="width:100%;">
+                <image src="{{item.imgSrc}}" mode="widthFix"></image>
+              </view>
+              <text class="flex-item" style="display:block;color:#333;width:100%;padding:5px;font-size:28rpx;">{{item.title}}</text>
+              <view class="PriceABuy flex-item  flex-wrp" style='width:100%;padding:0 5px;'>
+                <text class="flex-item" style="color:#e12b44;font-size:30rpx;">￥{{item.price}}</text>
+                <text class="flex-item" style="border:1px solid #e12b44;border-radius:10px;box-sizing:border-box;padding:8rpx 0rpx;text-align:center;color:#e12b44;font-size:22rpx;flex:0 0 45%;">立即抢购</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <navigator url="{{tabsContent2.moreGoods}}">
+          <text style="height:80rpx;line-height:80rpx;display:block;text-align:center;font-size:28rpx;">查看更多</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view hidden="{{!tab2isLoad}}">
+      <view class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="splitLine" style='height:50rpx;margin-top:10rpx;'></view>
+
+</view>

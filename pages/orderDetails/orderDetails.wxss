@@ -1,0 +1,86 @@
+/* pages/orderDetails/orderDetails.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.orderDetailContent {
+   margin-bottom: 45rpx;
+}
+
+.orderStatusBox {
+ 
+}
+
+.statusWrp {
+  margin: 25rpx;
+  padding: 25rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.statusWrp .strong {
+  display: block;
+  color: #e12b44;
+  font-size: 38rpx;
+}
+
+.statusWrp .text {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.statusWrp image {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 40rpx;
+}
+
+.goodsDetailBox {
+}
+
+
+
+.goodsImgWrap {
+  flex: 0 0 150rpx;
+}
+
+.goodsImgWrap image {
+  width: 100%;
+  height: 150rpx !important;
+}
+
+.goodsMsg {
+  overflow: hidden;
+  padding-left: 10rpx;
+  font-size: 24rpx;
+}
+
+.goodsMsg .top {
+  justify-content: space-between;
+}
+
+.goodsMsg .top .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.goodsMsg .top .price {
+  color: #e12b44;
+}
+
+.goodsMsg .mid {
+  justify-content: space-between;
+  margin-top: 35rpx;
+}
+
+.goodsMsg .mid .type {
+  color: #999;
+  font-size: 22rpx;
+}
+
+.goodsMsg .mid .count {
+}

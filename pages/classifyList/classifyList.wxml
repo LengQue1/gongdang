@@ -1,0 +1,31 @@
+<!--pages/classifyList/classsifyList.wxml-->
+<view class="classifyListContainter">
+  <navigator url='{{classifyPoster1.link}}'>
+    <view class="classifyPosterWrp">
+      <view class="classifyPos flex-wrp">
+        <image mode="widthFix" src='{{classifyPoster1.src}}'></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url='{{classifyPoster2.link}}'>
+    <view class="classifyPosterWrp">
+      <view class="classifyPos flex-wrp">
+        <image mode="widthFix" src='{{classifyPoster2.src}}'></image>
+      </view>
+    </view>
+  </navigator>
+  <view class="classifyText">
+    <text style='padding-right:20rpx;'>时下热卖</text>
+    <text>Hot cake</text>
+  </view>
+  <view class="classifyPosterWrp">
+    <view class="classifyPos classifyPosGrip flex-wrp">
+      <navigator wx:for="{{classifyPosterGrid}}" url='{{item.link}}'>
+        <view class="imgWrp">
+          <image mode="widthFix" src='{{item.src}}'></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+</view>

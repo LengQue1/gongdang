@@ -1,0 +1,29 @@
+/* components/popup/popup.wxss */
+/*popup*/
+.popUpWrp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  
+  top: 0;
+  left: 0;
+}
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 20;
+}
+.popUpWrp .pupupMain {
+  height: 50%;
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  transform:translateY(100%);
+}

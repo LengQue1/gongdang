@@ -1,0 +1,135 @@
+<!--pages/placeOrder/placeOrder.wxml-->
+<view class="placeOrderContainter">
+
+
+  <view class="goodsDetailBox">
+    <view class="cell-grap">
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">订单类型</text>
+        <view class="cell-viceInfo cell-right-arrow" bindtap="orderType">
+          <text style='color:#e12b44;'>{{order.orderType}}</text>
+          <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="cell-grap outFood" hidden="{{!(order.orderType === '外卖配送')}}">
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">收货人</text>
+        <view class="cell-viceInfo cell-right-arrow" bindtap="consigneeNameTap">
+          <text>{{order.outFood.consigneeName}}</text>
+          <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">送货时间</text>
+        <view class="cell-viceInfo cell-right-arrow">
+          <picker mode="date" value="{{order.outFood.date}}" bindchange="bindDateChange">
+            <view class="picker">
+              {{order.outFood.date}}
+              <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+            </view>
+
+          </picker>
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">备注</text>
+        <view class="cell-viceInfo">
+          <textarea bindblur="changeRemarks" value="{{order.remarks}}" placeholder="请输入备注" />
+        </view>
+      </view>
+    </view>
+
+    <view class="cell-grap Self" hidden="{{!(order.orderType === '店内自取')}}">
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">到店时间</text>
+        <view class="cell-viceInfo cell-right-arrow">
+          <picker mode="time" value="{{order.SelfExtraction.date}}" bindchange="bindTimeChange">
+            <view class="picker">
+              {{order.SelfExtraction.time}}
+              <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">取餐人</text>
+        <view class="cell-viceInfo cell-right-arrow" bindtap="SelfExtractionNameTap">
+          <text>{{order.SelfExtraction.Name}}</text>
+          <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+        </view>
+      </view>
+
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">备注</text>
+        <view class="cell-viceInfo">
+          <textarea bindblur="changeRemarks" value="{{order.remarks}}" placeholder="请输入备注" />
+        </view>
+      </view>
+    </view>
+
+    <view class="cell-grap diannei" hidden="{{!(order.orderType === '店内就餐')}}">
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">选择座位</text>
+        <view class="cell-viceInfo cell-right-arrow" bindtap="tableTap">
+          <text>{{order.customer.seatNumber}}</text>
+          <image src="../../images/right_gray_icon.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">来店人数</text>
+        <view class="cell-viceInfo cell-right-arrow">
+          <input type="number" bindblur="peopleChange" value="{{order.customer.peopleNumber}}"></input>
+          <!-- <text>{{order.customer.peopleNumber}}</text> -->
+        </view>
+      </view>
+      <view class="cell cell-content">
+        <text class="cell-mainInfo">备注</text>
+        <view class="cell-viceInfo">
+          <textarea bindblur="changeRemarks" value="{{order.remarks}}" placeholder="请输入备注" />
+        </view>
+      </view>
+    </view>
+
+    <view class="cell-grap" hidden="{{!(order.orderType === '外卖配送')}}">
+      <view class="cell cell-content">
+        <text>运费</text>
+        <text>￥{{order.freight}}</text>
+      </view>
+    </view>
+
+    <view class="cell-grap">
+      <view class="cell cell-content" wx:for="{{order.goodsList}}" wx:key="*this">
+        <view class="goodsImgWrap">
+          <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        </view>
+        <view class="goodsMsg">
+          <view class="top flex-wrp">
+            <text class="title">{{item.title}}</text>
+            <text class="price">￥{{item.price}}</text>
+          </view>
+          <view class="mid flex-wrp">
+            <text class="type">{{item.type}}</text>
+            <text class="count">x{{item.count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+  <view class="btmTabbar flex-wrp">
+    <view class="left flex-wrp">
+      <view class="">
+        应付：
+        <text class="strong">￥{{order.total}}</text>
+      </view>
+    </view>
+    <view class="right" bindtap="buyMethods">结算</view>
+
+  </view>
+
+</view>

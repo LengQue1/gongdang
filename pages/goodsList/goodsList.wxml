@@ -1,0 +1,52 @@
+<!--pages/goodsList/goodsList.wxml-->
+<view class="goodsListContent">
+  <view class="goodsListTitle">{{goodsListTitle}}</view>
+  <view class="goodsListItem flex-wrp" wx:for="{{goodsList}}" wx:key="*this">
+    <view class="goodsImg">
+      <image src="{{item.goodsImg}}" mode="widthFix"></image>
+    </view>
+    <view class="goodsInfo flex-wrp">
+      <text class="goodsTitle">{{item.goodsTitle}}</text>
+      <view class="bookWrp">
+        <text class="on" wx:if="{{item.isBook}}">可以预定</text>
+        <text class="off" wx:if="{{!item.isBook}}">不可预定</text>
+      </view>
+      <view class="priceBox flex-wrp">
+        <text class="price">￥{{item.goodsPrice}}</text>
+        <button size="mini" plain="true" data-index="{{index}}" class="buyBtn" bindtap="buyMethods" disabled="{{!(item.isBook)}}">立即抢购</button>
+      </view>
+    </view>
+  </view>
+  <view class="noMore">暂无更多</view>
+  <view class="popUpWrp" hidden="{{!showPoP}}">
+    <view class="mask" bindtap="maskTap"></view>
+    <view class="pupupMain" animation="{{animationData}}">
+      <view class="goodsDetail">
+        <view class="flex-wrp topMsg">
+          <view class="imgBox">
+            <image src="{{detaileGoods.goodsImg}}" mode="widthFix"></image>
+          </view>
+          <view class="msgBox">
+            <text class="title">{{detaileGoods.goodsTitle}}</text>
+            <text class="price">￥{{detaileGoods.goodsPrice}}</text>
+          </view>
+        </view>
+        <view class="sepcBox">
+          <text class="sepcTitle">商品规格：</text>
+          <view class="sepcItemWrp flex-wrp">
+            <view wx:for="{{detaileGoods.spec}}" data-index="{{index}}" bindtap="specTap" wx:key="*this" class="specItem {{item.select?'specSelect':''}}">{{item.name}}</view>
+          </view>
+        </view>
+        <view class="buyNumber flex-wrp">
+          <text>购买数量：</text>
+          <view class="addSub-grap flex-wrp">
+            <text class="sub {{subDisabled?'disabled':''}}" bindtap="subCount">-</text>
+            <input type="number" bindchange="bindCountChange"  value="{{count}}"></input>
+            <text class="add {{addDisabled?'disabled':''}}" bindtap="addCount">+</text>
+          </view>
+        </view>
+        <view class="addCart" bindtap="addCart">加入购物车</view>
+      </view>
+    </view>
+  </view>
+</view>

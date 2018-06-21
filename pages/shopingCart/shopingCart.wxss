@@ -1,0 +1,93 @@
+/* pages/shopingCart.wxss */
+page {
+  background-color: #f8f8f8;
+}
+.shopingCartContent {
+  font-size: 24rpx;
+  background-color: #fff;
+  margin-bottom: 100rpx;
+}
+
+.shopingCartContent .select {
+  padding: 15rpx;
+}
+
+.shopingCartContent .deleted {
+  padding: 20rpx;
+}
+
+.shopingCartContent .deleted image {
+  width: 35rpx;
+}
+
+.shopingCartContent .shopMsg {
+  height: 100%;
+}
+
+.shopingCartContent .shopMsg > image {
+  width: 200rpx;
+  height: 156rpx !important;
+}
+
+.shopingCartContent .shopMsg .shopMsgWrp {
+  flex-direction: column;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.shopingCartContent .shopingCartWrp {
+  border-bottom: 1px solid #f8f8f8;
+  padding: 10px 0;
+}
+
+.shopingCartContent .priceBox {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shopingCartContent  .title {
+  font-size: 26rpx;
+  padding-bottom: 20rpx;
+}
+
+.shopingCartContent .priceBox .price {
+  color: #e12b44;
+}
+
+.shopingCartContent .priceBox .num {
+  color: #999;
+}
+
+.fixed-btm {
+}
+
+.left-ctr {
+  flex: 0 0 70%;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 25rpx;
+}
+.moneyBox {
+
+}
+.moneyBox .money {
+  color: #e12b44;
+  font-size: 28rpx;
+}
+
+.right-ctr {
+  flex: 0 0 30%;
+  text-align: center;
+  color: #fff;
+  background-color: #e12b44;
+  width: 100%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.empty {text-align: center;margin: 70rpx 0;background-color: #f8f8f8;}
+.empty image{text-align: center;width: 150rpx;}
+.empty text{display: block;width: auto;font-size: 34rpx;color: #999;}
+.empty .button-sp-area{width: 50%;margin:35rpx auto;}
+.empty .weui-btn{background-color: #e12b44;font-size: 34rpx;height: 80rpx;line-height: 80rpx;}

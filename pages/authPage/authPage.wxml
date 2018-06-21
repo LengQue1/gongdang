@@ -1,0 +1,39 @@
+<!--pages/authPage/authPage.wxml-->
+<view class="authContent">
+  <view class="weui-cells__title">请输入个人验证信息</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="name" value="{{name}}" placeholder="请输入姓名" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" bindblur="phoneBlur" name="phone" value="{{phone}}" placeholder="请输入手机号" />
+        </view>
+        <view class="weui-cell__ft">
+           <view hidden="{{!hidden}}" class="weui-vcode-btn" bindtap="getCode">获取验证码</view> 
+          <view hidden="{{hidden}}" class="weui-vcode-btn" style="color:#999;">已发送({{time}}s)</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="code" type="number" value="{{code}}" placeholder="请输入验证码" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" formType="submit">确定</button>
+    </view>
+  </form>
+</view>

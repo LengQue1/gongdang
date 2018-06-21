@@ -1,0 +1,18 @@
+/* pages/authPage/authPage.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.authContent {
+}
+
+.weui-cell_input,.weui-vcode-btn {
+  font-size: 34rpx;
+}
+.weui-vcode-btn {
+  color:#e12b44;
+}
+.weui-btn {
+  background-color: #e12b44 !important;
+}

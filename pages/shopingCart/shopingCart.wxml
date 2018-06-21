@@ -1,0 +1,46 @@
+<!--pages/shopingCart.wxml-->
+<view class="shopingCartContent">
+  <block wx:if="{{shopingCartListLen}}">
+    <view class="shopingCartWrp flex-wrp" wx:for="{{shopingCartList}}" wx:key="*this">
+      <view class="select">
+        <checkbox bindtap="SelectCheckbox" data-index="{{index}}" value="{{item.id}}" checked="{{item.checked}}" />
+      </view>
+      <view class="shopMsg flex-item flex-wrp" bindtap="SelectCheckbox" data-index="{{index}}">
+        <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        <view class="shopMsgWrp flex-wrp">
+          <text class="title">{{item.title}}</text>
+          <view class="flex-wrp priceBox">
+            <text class="price">￥{{item.price}}</text>
+            <text class="num">x{{item.num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="deleted" bindtap="openConfirm" data-index="{{index}}">
+        <image src="../../images/cart_del.png" mode='widthFix'></image>
+      </view>
+    </view>
+    <view class="fixed-btm flex-wrp">
+      <view class="flex-item left-ctr flex-wrp">
+        <view>
+          <label class="checkbox" bindtap="SelectAllCheckbox">
+            <checkbox checked="{{allSelect}}" /> 全选
+          </label>
+        </view>
+        <view class="moneyBox">
+          <text>总计：<text class="money">￥{{totalPrice}}</text></text>
+        </view>
+      </view>
+      <view class="right-ctr" bindtap="Settlement">
+        <text>结算 ( {{totalCount}} )</text>
+      </view>
+    </view>
+  </block>
+  <view wx:else class="empty">
+    <image src="../../images/cart_nothing.png" mode="widthFix"></image>
+    <text> 你的购物车空空如也</text>
+    <text> 快去装满它吧 !</text>
+    <view class="button-sp-area">
+      <button class="weui-btn" type="primary" bindtap="atWill">随便逛逛</button>
+    </view>
+  </view>
+</view>

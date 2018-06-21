@@ -1,0 +1,77 @@
+<!--pages/goodsDetails/goodsDetails.wxml-->
+<view class="goodsDetailsContainter">
+  <view class="swiper-content">
+    <swiper indicator-dots="{{swiperData.indicatorDots}}" circular="{{swiperData.circular}}" indicator-active-color="#e80c0c" autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}" duration="{{swiperData.duration}}">
+      <block wx:for="{{goodsDetails.bannerImgSrc}}">
+        <swiper-item>
+          <image src="{{item}}" mode="widthFix" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goodsDetailsInfo">
+    <text class="goodsTitle">{{goodsDetails.goodsTitle}}</text>
+    <view class="goodsInfo flex-wrp">
+      <view class="infoWrp">
+        <text class="price">￥<text class="strong">{{goodsDetails.price}}</text></text>
+        <text class="volume">销量：{{goodsDetails.volume}}</text>
+      </view>
+      <text class="onBook" wx:if="{{goodsDetails.isBook}}">可以预定</text>
+      <text class="offBook" wx:if="{{!goodsDetails.isBook}}">不可预定</text>
+    </view>
+  </view>
+  <view class="goodsDetailsMain">
+    <view class="tips">商品详情</view>
+    <view class="rich-html-wrp">
+      <rich-text nodes="{{goodsDetails.details}}" bindtap="tap"></rich-text>
+    </view>
+  </view>
+  <view class="btmTabbar flex-wrp">
+    <view class="left flex-wrp">
+      <view class="item flex-wrp" bindtap="jumpShopCart">
+        <image src="../../images/icon-02.png" mode="widthFix"></image>
+        <text>购物车</text>
+        <view class="dot">{{cartNum}}</view>
+      </view>
+      <view class="item flex-wrp">
+        <image src="../../images/goods_det_contact.png" mode="widthFix"></image>
+        <text>客服</text>
+      </view>
+    </view>
+    <view class="right" bindtap="buyMethods" wx:if="{{goodsDetails.isBook}}">￥{{goodsDetails.price}}购买</view>
+    <view class="right" style="background-color:#999;" wx:if="{{!goodsDetails.isBook}}">暂不可订购</view>
+  </view>
+
+  <view class="popUpWrp" hidden="{{!showPoP}}">
+    <view class="mask" bindtap="maskTap"></view>
+    <view class="pupupMain" animation="{{animationData}}">
+      <view class="goodsDetail">
+        <view class="flex-wrp topMsg">
+          <view class="imgBox">
+            <image src="{{goodsDetails.goodsImg}}" mode="widthFix"></image>
+          </view>
+          <view class="msgBox">
+            <text class="title">{{goodsDetails.goodsTitle}}</text>
+            <text class="price">￥{{goodsDetails.price}}</text>
+          </view>
+        </view>
+        <view class="sepcBox">
+          <text class="sepcTitle">商品规格：</text>
+          <view class="sepcItemWrp flex-wrp">
+            <view wx:for="{{goodsDetails.spec}}" data-index="{{index}}" bindtap="specTap" wx:key="*this" class="specItem {{item.select?'specSelect':''}}">{{item.name}}</view>
+          </view>
+        </view>
+        <view class="buyNumber flex-wrp">
+          <text>购买数量：</text>
+          <view class="addSub-grap flex-wrp">
+            <text class="sub {{subDisabled?'disabled':''}}" bindtap="subCount">-</text>
+            <input type="number" bindchange="bindCountChange" value="{{count}}"></input>
+            <text class="add {{addDisabled?'disabled':''}}" bindtap="addCount">+</text>
+          </view>
+        </view>
+        <view class="addCart" bindtap="addCart">加入购物车</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,37 @@
+/* pages/personl/personl.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 110rpx;
+  height: 110rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  display: block;
+  width: 100%;
+  font-size: 36rpx;
+}
+
+.shopAddr {
+  display: block;
+  color: #aaa;
+  width: 100%;
+  font-size: 32rpx;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
